@@ -1,6 +1,3 @@
-
-![Screenshot 2024-02-26 224644](https://github.com/Hex1629/URANIUM-C2/assets/93824226/58c0763c-6448-499a-9e2d-eb460acc913d)
-
 # URANIUM-C2
 HEX_CNC Version New ? It False
 
